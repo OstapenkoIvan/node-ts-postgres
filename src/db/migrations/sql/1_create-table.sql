@@ -10,7 +10,6 @@ CREATE TABLE users(
   username VARCHAR ( 50 ) UNIQUE NOT NULL,
   email VARCHAR ( 50 ) UNIQUE NOT NULL,
   role VARCHAR ( 50 ) CONSTRAINT role_enums CHECK (role IN ('admin', 'user')),
-  -- dateCreated TIMESTAMP NOT NULL default NOW(),
   dateCreated TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
   profileId INTEGER,
   FOREIGN KEY (profileId) REFERENCES profiles(id) ON DELETE CASCADE 
